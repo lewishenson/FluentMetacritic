@@ -1,6 +1,5 @@
 ﻿using FluentMetacritic.Domain;
 using HtmlAgilityPack;
-using System;
 
 namespace FluentMetacritic.Scraping
 {
@@ -12,24 +11,10 @@ namespace FluentMetacritic.Scraping
 
             var company = new Company(name)
                            {
-                               AverageCareerScore = ReadAverageCareerScore(node)
+                               AverageCareerScore = ReadExtendedStat<int?>(node, "avg_career_score")
                            };
 
             return company;
-        }
-
-        private int? ReadAverageCareerScore(HtmlNode node)
-        {
-            const string ToBeDecidedScore = "tbd";
-
-            var rawAverageCareerScore = ReadExtendedStat<string>(node, "avg_career_score");
-
-            if (string.IsNullOrWhiteSpace(rawAverageCareerScore) || rawAverageCareerScore.Equals(ToBeDecidedScore, StringComparison.InvariantCultureIgnoreCase))
-            {
-                return null;
-            }
-
-            return Converter.SafeConvert<int>(rawAverageCareerScore);
         }
     }
 }

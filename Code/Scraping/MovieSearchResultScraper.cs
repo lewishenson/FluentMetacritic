@@ -10,8 +10,6 @@ namespace FluentMetacritic.Scraping
             var name = ReadName(node);
             var releaseDate = ReadReleaseDate(node);
 
-            var a = ReadExtendedStat<decimal?>(node, "product_avguserscore");
-
             var movie = new Movie(name, releaseDate)
                             {
                                 CriticScore = ReadValue<int?>(node, "./div[@class='result_wrap']/div/div[@class='main_stats']/span"),

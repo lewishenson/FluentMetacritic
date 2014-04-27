@@ -43,8 +43,15 @@ namespace FluentMetacritic.Scraping
 
         protected virtual T ReadExtendedStat<T>(HtmlNode node, string extendedStatClass)
         {
+            const string ToBeDecidedScore = "tbd";
+
             var path = GenerateExtendedStatPath(extendedStatClass);
             var rawValue = ReadValue(node, path);
+
+            if (string.IsNullOrWhiteSpace(rawValue) || rawValue.Equals(ToBeDecidedScore, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return default(T);
+            }
 
             return Converter.SafeConvert<T>(rawValue);
         }
