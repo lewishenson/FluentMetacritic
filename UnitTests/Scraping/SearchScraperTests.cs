@@ -26,6 +26,18 @@ namespace FluentMetacritic.UnitTests.Scraping
         }
 
         [Fact]
+        public void GivenThereAreNoSearchResultsInTheContent_WhenItIsScraped_AnEmptyCollectionIsReturned()
+        {
+            const string NoSearchResultsContent = "<html><head></head><body><div class=\"module search_results\"><div class=\"body\"><p>No search results found.</p></body></html>";
+
+            var scraper = new SearchScraper();
+
+            var entities = scraper.Scrape<IEntity>(NoSearchResultsContent);
+
+            entities.Should().BeEmpty();
+        }
+
+        [Fact]
         public void GivenThereIsAnUnknownResultTypeInTheContent_WhenItIsScraped_AnExceptionIsThrown()
         {
             var scraper = new SearchScraper();

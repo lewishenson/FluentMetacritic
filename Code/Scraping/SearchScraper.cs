@@ -40,6 +40,11 @@ namespace FluentMetacritic.Scraping
 
         private IEnumerable<IEntity> ScrapeSearchResults(IEnumerable<HtmlNode> searchResults)
         {
+            if (searchResults == null)
+            {
+                yield break;
+            }
+
             foreach (var searchResult in searchResults)
             {
                 var resultType = GetResultType(searchResult);

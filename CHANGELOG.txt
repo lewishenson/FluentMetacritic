@@ -1,5 +1,8 @@
 ﻿FluentMetacritic changelog
 ==========================
 
+v1.0.0.1
+Fixed bug that prevented searches that returned zero results from being processed.
+
 v1.0.0.0
 Initial version.
