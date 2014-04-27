@@ -1,4 +1,3 @@
-Metacritic.Net
-==============
+# FluentMetacritic
 
-C# API for scraping Metacritic review scores
+C# API for scraping Metacritic review scores.

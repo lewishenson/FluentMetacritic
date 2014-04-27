@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMetacritic</RootNamespace>
+    <AssemblyName>FluentMetacritic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyInjection\Factory.cs" />
+    <Compile Include="DependencyInjection\IFactory.cs" />
+    <Compile Include="Domain\Album.cs" />
+    <Compile Include="Domain\Company.cs" />
+    <Compile Include="Domain\IGame.cs" />
+    <Compile Include="Domain\IFeature.cs" />
+    <Compile Include="Domain\ICompany.cs" />
+    <Compile Include="Domain\IAlbum.cs" />
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Domain\Feature.cs" />
+    <Compile Include="Domain\Game.cs" />
+    <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\IMovie.cs" />
+    <Compile Include="Domain\IPerson.cs" />
+    <Compile Include="Domain\ITelevisionShow.cs" />
+    <Compile Include="Domain\ITrailer.cs" />
+    <Compile Include="Domain\Movie.cs" />
+    <Compile Include="Domain\Person.cs" />
+    <Compile Include="MetacriticUnavailableException.cs" />
+    <Compile Include="Query\IQueryDefinitionExtensions.cs" />
+    <Compile Include="Query\IOrderingQueryBuilder.cs" />
+    <Compile Include="Query\IPagingQueryBuilder.cs" />
+    <Compile Include="Query\IQueryBuilder.cs" />
+    <Compile Include="Query\IQueryDefinition.cs" />
+    <Compile Include="Query\IQueryExecutor.cs" />
+    <Compile Include="Query\QueryDefinition.cs" />
+    <Compile Include="Query\QueryExecutor.cs" />
+    <Compile Include="Scraping\Converter.cs" />
+    <Compile Include="Scraping\AlbumSearchResultScraper.cs" />
+    <Compile Include="Scraping\CompanySearchResultScraper.cs" />
+    <Compile Include="Scraping\TelevisionShowSearchResultScraper.cs" />
+    <Compile Include="Scraping\FeatureSearchResultScraper.cs" />
+    <Compile Include="Scraping\PersonSearchResultScraper.cs" />
+    <Compile Include="Scraping\TrailerSearchResultScraper.cs" />
+    <Compile Include="Scraping\MovieSearchResultScraper.cs" />
+    <Compile Include="Scraping\GameSearchResultScraper.cs" />
+    <Compile Include="Scraping\ISearchResultScraper.cs" />
+    <Compile Include="Scraping\ISearchScraper.cs" />
+    <Compile Include="Scraping\SearchResultScraper.cs" />
+    <Compile Include="Scraping\SearchScraper.cs" />
+    <Compile Include="Search\IMetacriticSearch.cs" />
+    <Compile Include="Metacritic.cs" />
+    <Compile Include="Net\IWebClient.cs" />
+    <Compile Include="Net\WebClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Trailer.cs" />
+    <Compile Include="Domain\TelevisionShow.cs" />
+    <Compile Include="Query\Category.cs" />
+    <Compile Include="Query\IUriGenerator.cs" />
+    <Compile Include="Query\IUriGeneratorExtensions.cs" />
+    <Compile Include="Search\MetacriticSearch.cs" />
+    <Compile Include="Query\OrderBy.cs" />
+    <Compile Include="Query\QueryBuilder.cs" />
+    <Compile Include="Query\UriGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
