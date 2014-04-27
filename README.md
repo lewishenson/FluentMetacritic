@@ -32,3 +32,10 @@ Run a search and get page two of the results:
 ```csharp
 var searchResults = Metacritic.SearchFor().AllItems().GoTo().Page(2).UsingText("Lord of the Rings");
 ```
+
+
+## NuGet
+
+If you don't care about the source code you can just install FluentMetacritic using NuGet.
+
+    PM> Install-Package FluentMetacritic
