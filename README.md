@@ -1,4 +1,4 @@
-# FluentMetacritic
+# FluentMetacritic [![Build status](https://ci.appveyor.com/api/projects/status/pac610t755k03jus)](https://ci.appveyor.com/project/lewishenson/fluentmetacritic)
 
 C# API for scraping Metacritic review scores.
 
