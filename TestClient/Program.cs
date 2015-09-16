@@ -9,7 +9,8 @@ namespace FluentMetacritic.TestClient
         {
             var writer = new ConsoleWriter();
 
-            var a = Metacritic.SearchFor().Movies().UsingText("Nt Live: A Small Family Business").ToList();
+            var saltMovies = Metacritic.SearchFor().Movies().UsingText("Salt");
+            writer.Output("Salt movies", saltMovies.ToList());
 
             var darkKnightAlbums = Metacritic.SearchFor().Albums().UsingText("dark knight");
             writer.Output("Dark Knight albums", darkKnightAlbums.ToList());
