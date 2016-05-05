@@ -38,4 +38,6 @@ var searchResults = Metacritic.SearchFor().AllItems().GoTo().Page(2).UsingText("
 
 If you don't care about the source code you can just install FluentMetacritic using NuGet.
 
+```powershell
     PM> Install-Package FluentMetacritic
+```
