@@ -1,15 +1,15 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 using FluentMetacritic.DependencyInjection;
 using FluentMetacritic.Domain;
 using FluentMetacritic.Net;
 using FluentMetacritic.Query;
 using FluentMetacritic.Scraping;
 using FluentMetacritic.Search;
-using System;
 using Xunit;
 using Xunit.Sdk;
 
-namespace FluentMetacritic.UnitTests.DependencyInjection
+namespace FluentMetacritic.UnitTests.Query.DependencyInjection
 {
     [Trait("Category", "UnitTest")]
     public class FactoryTests
