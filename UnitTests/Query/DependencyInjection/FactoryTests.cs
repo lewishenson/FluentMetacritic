@@ -7,7 +7,7 @@ using FluentMetacritic.Scraping;
 using FluentMetacritic.Search;
 using System;
 using Xunit;
-using Xunit.Extensions;
+using Xunit.Sdk;
 
 namespace FluentMetacritic.UnitTests.DependencyInjection
 {
@@ -15,12 +15,12 @@ namespace FluentMetacritic.UnitTests.DependencyInjection
     public class FactoryTests
     {
         [Fact]
-        public void GivenAFactorySingleton_WhenAnUknownInstanceIsRequired_ThenAnExceptionIsThrown()
+        public void GivenAFactorySingleton_WhenAnUnknownInstanceIsRequired_ThenAnExceptionIsThrown()
         {
             Action factoryAction = () => Factory.Instance.Create<TestClass>();
 
             factoryAction.ShouldThrow<InvalidOperationException>()
-                         .WithMessage("Unable to create Xunit.Extensions.TestClass instance.");
+                         .WithMessage("Unable to create Xunit.Sdk.TestClass instance.");
         }
 
         [Theory]
