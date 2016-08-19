@@ -1,4 +1,4 @@
-# FluentMetacritic [![Build status](http://img.shields.io/appveyor/ci/lewishenson/FluentMetacritic.svg?style=flat)](https://ci.appveyor.com/project/lewishenson/FluentMetacritic) [![NuGet package](https://buildstats.info/nuget/FluentMetacritic/)](https://www.nuget.org/packages/FluentMetacritic/)
+# FluentMetacritic [![Build status](http://img.shields.io/appveyor/ci/lewishenson/FluentMetacritic.svg?style=flat)](https://ci.appveyor.com/project/lewishenson/FluentMetacritic) [![NuGet package](https://buildstats.info/nuget/FluentMetacritic)](https://www.nuget.org/packages/FluentMetacritic)
 
 C# API for scraping Metacritic review scores.
 
