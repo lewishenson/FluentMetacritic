@@ -66,18 +66,18 @@ namespace FluentMetacritic.DependencyInjection
             AddAction<IQueryDefinition<ITrailer>>(() => new QueryDefinition<ITrailer>());
             AddAction<IQueryDefinition<ITelevisionShow>>(() => new QueryDefinition<ITelevisionShow>());
 
-            AddAction<IQueryExecutor<IEntity>>(() => new QueryExecutor<IEntity>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<IAlbum>>(() => new QueryExecutor<IAlbum>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<ICompany>>(() => new QueryExecutor<ICompany>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<IGame>>(() => new QueryExecutor<IGame>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<IMovie>>(() => new QueryExecutor<IMovie>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<IPerson>>(() => new QueryExecutor<IPerson>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<ITrailer>>(() => new QueryExecutor<ITrailer>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
-            AddAction<IQueryExecutor<ITelevisionShow>>(() => new QueryExecutor<ITelevisionShow>(Instance.Create<IWebClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<IEntity>>(() => new QueryExecutor<IEntity>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<IAlbum>>(() => new QueryExecutor<IAlbum>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<ICompany>>(() => new QueryExecutor<ICompany>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<IGame>>(() => new QueryExecutor<IGame>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<IMovie>>(() => new QueryExecutor<IMovie>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<IPerson>>(() => new QueryExecutor<IPerson>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<ITrailer>>(() => new QueryExecutor<ITrailer>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
+            AddAction<IQueryExecutor<ITelevisionShow>>(() => new QueryExecutor<ITelevisionShow>(Instance.Create<IHttpClient>(), Instance.Create<ISearchScraper>()));
 
             AddAction<ISearchScraper>(() => new SearchScraper());
 
-            AddAction<IWebClient>(() => new WebClient());
+            AddAction<IHttpClient>(() => new HttpClientWrapper());
         }
 
         private void AddAction<T>(Func<object> value)

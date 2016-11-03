@@ -2,7 +2,7 @@
 
 namespace FluentMetacritic.Query
 {
-    public interface IPagingQueryBuilder<out T> where T : IEntity
+    public interface IPagingQueryBuilder<T> where T : IEntity
     {
         IQueryBuilder<T> Page(int pageNumber);
     }

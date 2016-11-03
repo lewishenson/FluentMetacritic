@@ -1,15 +1,16 @@
 ﻿using FluentMetacritic.Domain;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FluentMetacritic.Query
 {
-    public interface IQueryBuilder<out T>
+    public interface IQueryBuilder<T>
         where T : IEntity
     {
         IOrderingQueryBuilder<T> OrderedBy();
 
         IPagingQueryBuilder<T> GoTo();
 
-        IEnumerable<T> UsingText(string text);
+        Task<IEnumerable<T>> UsingTextAsync(string text);
     }
 }

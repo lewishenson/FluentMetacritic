@@ -7,6 +7,7 @@ using FluentMetacritic.Scraping;
 using NSubstitute;
 using System;
 using System.Net;
+using NSubstitute.ExceptionExtensions;
 using Xunit;
 
 namespace FluentMetacritic.UnitTests.Query
@@ -15,12 +16,12 @@ namespace FluentMetacritic.UnitTests.Query
     public class QueryExecutorTests
     {
         [Fact]
-        public void GivenTheMetacriticSiteIsUnavailable_WhenTheSearchIsExecuted_ThenAnExceptionWillBeThrown()
+        public async void GivenTheMetacriticSiteIsUnavailable_WhenTheSearchIsExecuted_ThenAnExceptionWillBeThrown()
         {
-            var webClient = Substitute.For<IWebClient>();
+            var webClient = Substitute.For<IHttpClient>();
 
-            webClient.GetContent(Arg.Any<string>())
-                     .Returns(x => { throw new WebException(); });
+            webClient.GetContentAsync(Arg.Any<string>())
+                     .Throws(x => { throw new WebException(); });
 
             var searchScraper = Substitute.For<ISearchScraper>();
 
@@ -28,17 +29,16 @@ namespace FluentMetacritic.UnitTests.Query
 
             var queryDefinition = new QueryDefinition<IMovie> { Text = "sherlock" };
 
-            Action executeAction = () => executor.Execute(queryDefinition);
+            var exception = await Assert.ThrowsAsync<MetacriticUnavailableException>(() => executor.ExecuteAsync(queryDefinition));
 
-            executeAction.ShouldThrow<MetacriticUnavailableException>()
-                         .WithInnerException<WebException>()
-                         .WithMessage("Unable to perform search.");
+            exception.Message.Should().Be("Unable to perform search.");
+            exception.InnerException.Should().BeOfType<WebException>();
         }
 
         [Fact]
-        public void GivenTheMetacriticSiteIsAvailable_WhenTheSearchIsExecuted_ThenTheEntitiesWillBeReturned()
+        public async void GivenTheMetacriticSiteIsAvailable_WhenTheSearchIsExecuted_ThenTheEntitiesWillBeReturned()
         {
-            var webClient = Substitute.For<IWebClient>();
+            var webClient = Substitute.For<IHttpClient>();
 
             var searchScraper = Substitute.For<ISearchScraper>();
 
@@ -49,7 +49,7 @@ namespace FluentMetacritic.UnitTests.Query
 
             var queryDefinition = new QueryDefinition<IMovie> { Text = "sherlock" };
 
-            var entities = executor.Execute(queryDefinition);
+            var entities = await executor.ExecuteAsync(queryDefinition);
 
             entities.Should().NotBeEmpty();
         }

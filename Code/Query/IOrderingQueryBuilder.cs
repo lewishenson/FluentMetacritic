@@ -2,7 +2,7 @@
 
 namespace FluentMetacritic.Query
 {
-    public interface IOrderingQueryBuilder<out T> where T : IEntity
+    public interface IOrderingQueryBuilder<T> where T : IEntity
     {
         IQueryBuilder<T> Relevancy();
 

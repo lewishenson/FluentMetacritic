@@ -25,7 +25,7 @@ namespace FluentMetacritic.UnitTests.Query.DependencyInjection
 
         [Theory]
         [InlineData(typeof(IMetacriticSearch))]
-        [InlineData(typeof(IWebClient))]
+        [InlineData(typeof(IHttpClient))]
         [InlineData(typeof(IQueryBuilder<IEntity>))]
         [InlineData(typeof(IQueryBuilder<IAlbum>))]
         [InlineData(typeof(IQueryBuilder<ICompany>))]

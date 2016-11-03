@@ -3,37 +3,38 @@ using FluentMetacritic.Net;
 using FluentMetacritic.Scraping;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace FluentMetacritic.Query
 {
     public class QueryExecutor<T> : IQueryExecutor<T>
         where T : IEntity
     {
-        private readonly IWebClient _webClient;
+        private readonly IHttpClient _httpClient;
 
         private readonly ISearchScraper _searchScraper;
 
-        public QueryExecutor(IWebClient webClient, ISearchScraper searchScraper)
+        public QueryExecutor(IHttpClient httpClient, ISearchScraper searchScraper)
         {
-            _webClient = webClient;
+            _httpClient = httpClient;
             _searchScraper = searchScraper;
         }
 
-        public IEnumerable<T> Execute(IQueryDefinition<T> queryDefinition)
+        public async Task<IEnumerable<T>> ExecuteAsync(IQueryDefinition<T> queryDefinition)
         {
-            var content = GetSearchPageContent(queryDefinition);
+            var content = await GetSearchPageContent(queryDefinition);
             var entities = _searchScraper.Scrape<T>(content);
 
             return entities;
         }
 
-        private string GetSearchPageContent(IQueryDefinition<T> queryDefinition)
+        private async Task<string> GetSearchPageContent(IQueryDefinition<T> queryDefinition)
         {
             var uri = GetSearchPageUri(queryDefinition);
 
             try
             {
-                return _webClient.GetContent(uri);
+                return await _httpClient.GetContentAsync(uri);
             }
             catch (WebException ex)
             {

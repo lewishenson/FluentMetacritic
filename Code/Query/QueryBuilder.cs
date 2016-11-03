@@ -1,5 +1,6 @@
 ﻿using FluentMetacritic.Domain;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FluentMetacritic.Query
 {
@@ -22,11 +23,11 @@ namespace FluentMetacritic.Query
             return this;
         }
 
-        public IEnumerable<T> UsingText(string text)
+        public async Task<IEnumerable<T>> UsingTextAsync(string text)
         {
             _queryDefinition.Text = text;
 
-            return _queryDefinition.Execute();
+            return await _queryDefinition.ExecuteAsync();
         }
 
         public IQueryBuilder<T> Relevancy()
