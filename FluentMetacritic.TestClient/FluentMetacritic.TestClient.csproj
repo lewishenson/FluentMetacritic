@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Code\FluentMetacritic.csproj">
+    <ProjectReference Include="..\FluentMetacritic\FluentMetacritic.csproj">
       <Project>{e3f5bef9-ad9d-4a05-b5a6-50b53e893ce0}</Project>
       <Name>FluentMetacritic</Name>
     </ProjectReference>

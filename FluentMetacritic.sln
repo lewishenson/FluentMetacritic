@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic", "Code\FluentMetacritic.csproj", "{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}"
-EndProject
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{319BEEDC-A9B1-46B3-9639-2CF138B503B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53384392-1E73-41CB-A407-16E3C869F2D3}"
@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Client", "Test Client", "{D911AA50-1A00-4CBF-BE45-D4A274EE6B54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic.UnitTests", "UnitTests\FluentMetacritic.UnitTests.csproj", "{406CE468-02C9-4821-914E-93A15C9F70FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic", "FluentMetacritic\FluentMetacritic.csproj", "{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic.TestClient", "TestClient\FluentMetacritic.TestClient.csproj", "{4DDA2952-BD87-4C84-844B-90EAF34F0B41}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic.TestClient", "FluentMetacritic.TestClient\FluentMetacritic.TestClient.csproj", "{4DDA2952-BD87-4C84-844B-90EAF34F0B41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMetacritic.UnitTests", "FluentMetacritic.UnitTests\FluentMetacritic.UnitTests.csproj", "{406CE468-02C9-4821-914E-93A15C9F70FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,21 +33,21 @@ Global
 		{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{406CE468-02C9-4821-914E-93A15C9F70FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{406CE468-02C9-4821-914E-93A15C9F70FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{406CE468-02C9-4821-914E-93A15C9F70FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{406CE468-02C9-4821-914E-93A15C9F70FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DDA2952-BD87-4C84-844B-90EAF34F0B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DDA2952-BD87-4C84-844B-90EAF34F0B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DDA2952-BD87-4C84-844B-90EAF34F0B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DDA2952-BD87-4C84-844B-90EAF34F0B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{406CE468-02C9-4821-914E-93A15C9F70FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{406CE468-02C9-4821-914E-93A15C9F70FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{406CE468-02C9-4821-914E-93A15C9F70FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{406CE468-02C9-4821-914E-93A15C9F70FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E3F5BEF9-AD9D-4A05-B5A6-50B53E893CE0} = {319BEEDC-A9B1-46B3-9639-2CF138B503B9}
-		{406CE468-02C9-4821-914E-93A15C9F70FA} = {66BBF85E-0F2D-4CB6-9D7A-118C094C73B0}
 		{4DDA2952-BD87-4C84-844B-90EAF34F0B41} = {D911AA50-1A00-4CBF-BE45-D4A274EE6B54}
+		{406CE468-02C9-4821-914E-93A15C9F70FA} = {66BBF85E-0F2D-4CB6-9D7A-118C094C73B0}
 	EndGlobalSection
 EndGlobal
