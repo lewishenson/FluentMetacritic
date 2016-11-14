@@ -48,7 +48,7 @@ namespace FluentMetacritic.Scraping
             var path = GenerateExtendedStatPath(extendedStatClass);
             var rawValue = ReadValue(node, path);
 
-            if (string.IsNullOrWhiteSpace(rawValue) || rawValue.Equals(ToBeDecidedScore, StringComparison.InvariantCultureIgnoreCase))
+            if (string.IsNullOrWhiteSpace(rawValue) || rawValue.Equals(ToBeDecidedScore, StringComparison.OrdinalIgnoreCase))
             {
                 return default(T);
             }

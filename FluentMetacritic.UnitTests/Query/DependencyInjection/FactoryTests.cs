@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using FluentAssertions;
 using FluentMetacritic.DependencyInjection;
 using FluentMetacritic.Domain;
@@ -53,7 +54,7 @@ namespace FluentMetacritic.UnitTests.Query.DependencyInjection
         [InlineData(typeof(ISearchScraper))]
         public void GivenAFactorySingleton_WhenAKnownTypeIsRequired_ThenItIsCreated(Type type)
         {
-            var createMethod = typeof(Factory).GetMethod("Create");
+            var createMethod = typeof(Factory).GetTypeInfo().GetMethod("Create");
             var genericCreateMethod = createMethod.MakeGenericMethod(type);
 
             var createdInstance = genericCreateMethod.Invoke(Factory.Instance, null);

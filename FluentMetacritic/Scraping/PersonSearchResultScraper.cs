@@ -35,7 +35,7 @@ namespace FluentMetacritic.Scraping
             foreach (var averageCareerScoreElement in averageCareerScoreElements)
             {
                 var label = averageCareerScoreElement.SelectSingleNode("span[@class='label']");
-                if ((label == null) || (label.InnerText.IndexOf(careerType, StringComparison.InvariantCultureIgnoreCase) < 0))
+                if ((label == null) || (label.InnerText.IndexOf(careerType, StringComparison.OrdinalIgnoreCase) < 0))
                 {
                     continue;
                 }

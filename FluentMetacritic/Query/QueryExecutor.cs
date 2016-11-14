@@ -1,4 +1,5 @@
-﻿using FluentMetacritic.Domain;
+﻿using System;
+using FluentMetacritic.Domain;
 using FluentMetacritic.Net;
 using FluentMetacritic.Scraping;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace FluentMetacritic.Query
             {
                 return await _httpClient.GetContentAsync(uri);
             }
-            catch (WebException ex)
+            catch (Exception ex)
             {
                 throw new MetacriticUnavailableException("Unable to perform search.", ex);
             }

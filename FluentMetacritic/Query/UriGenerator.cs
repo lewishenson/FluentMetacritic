@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+using System.Net;
 
 namespace FluentMetacritic.Query
 {
@@ -59,7 +59,7 @@ namespace FluentMetacritic.Query
 
         private static string EncodeSearchTerm(string input)
         {
-            return HttpUtility.UrlEncode(input.Trim().Replace(" ", "+"));
+            return WebUtility.UrlEncode(input.Trim().Replace(" ", "+"));
         }
     }
 }

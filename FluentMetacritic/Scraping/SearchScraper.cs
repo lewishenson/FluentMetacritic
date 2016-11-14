@@ -8,7 +8,7 @@ namespace FluentMetacritic.Scraping
 {
     public class SearchScraper : ISearchScraper
     {
-        private static readonly IDictionary<string, ISearchResultScraper<IEntity>> Scrapers = new Dictionary<string, ISearchResultScraper<IEntity>>(StringComparer.InvariantCultureIgnoreCase);
+        private static readonly IDictionary<string, ISearchResultScraper<IEntity>> Scrapers = new Dictionary<string, ISearchResultScraper<IEntity>>(StringComparer.OrdinalIgnoreCase);
 
         static SearchScraper()
         {

@@ -30,7 +30,7 @@ namespace FluentMetacritic.UnitTests.Query
             var result = UriGenerator.Create()
                                      .Generate(" star trek ");
 
-            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/all/star%2btrek/results");
+            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/all/star%2Btrek/results");
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace FluentMetacritic.UnitTests.Query
                                      .ForCategory(Category.TelevisionShows)
                                      .Generate(" star trek ");
 
-            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/tv/star%2btrek/results");
+            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/tv/star%2Btrek/results");
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace FluentMetacritic.UnitTests.Query
                                      .OrderedBy(OrderBy.MostRecent)
                                      .Generate(" star trek ");
 
-            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/movie/star%2btrek/results?sort=recent");
+            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/movie/star%2Btrek/results?sort=recent");
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace FluentMetacritic.UnitTests.Query
                                      .Page(2)
                                      .Generate(" star trek ");
 
-            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/game/star%2btrek/results?page=1&sort=recent");
+            result.ShouldBeEquivalentTo("http://www.metacritic.com/search/game/star%2Btrek/results?page=1&sort=recent");
         }
     }
 }

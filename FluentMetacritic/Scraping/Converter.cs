@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace FluentMetacritic.Scraping
 {
@@ -17,9 +18,10 @@ namespace FluentMetacritic.Scraping
             }
 
             var targetType = typeof(T);
-            if (targetType.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(Nullable<>))
+            var targetTypeInfo = targetType.GetTypeInfo();
+            if (targetTypeInfo.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                return (T)Convert.ChangeType(value, targetType.GetGenericArguments()[0]);
+                return (T)Convert.ChangeType(value, targetTypeInfo.GetGenericArguments()[0]);
             }
 
             return (T)Convert.ChangeType(value, typeof(T));

@@ -38,7 +38,7 @@ namespace FluentMetacritic.Scraping
             {
                 var actorName = actorElement.InnerText.Trim(' ', ',');
 
-                if (actorName.Equals(StarringValue, StringComparison.InvariantCultureIgnoreCase))
+                if (actorName.Equals(StarringValue, StringComparison.OrdinalIgnoreCase))
                 {
                     continue;
                 }
