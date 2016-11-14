@@ -4,29 +4,11 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class AlbumSearchResultBuilder : SearchResultBuilderBase<AlbumSearchResultBuilder>
     {
-        protected override AlbumSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override AlbumSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Album";
-            }
-        }
+        protected override string ResultType => "Album";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "basic_stat";
-            }
-        }
+        protected override string ExtendedStatsClass => "basic_stat";
 
         protected int? Score { get; private set; }
 

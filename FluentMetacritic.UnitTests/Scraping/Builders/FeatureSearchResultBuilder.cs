@@ -2,29 +2,11 @@
 {
     public class FeatureSearchResultBuilder : SearchResultBuilderBase<FeatureSearchResultBuilder>
     {
-        protected override FeatureSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override FeatureSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Feature";
-            }
-        }
+        protected override string ResultType => "Feature";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "basic_stat";
-            }
-        }
+        protected override string ExtendedStatsClass => "basic_stat";
 
         public FeatureSearchResultBuilder WithPostedBy(string postedBy)
         {

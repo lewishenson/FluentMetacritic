@@ -11,37 +11,13 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
             Cast = Enumerable.Empty<string>();
         }
 
-        protected override TelevisionShowSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override TelevisionShowSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "TV Show";
-            }
-        }
+        protected override string ResultType => "TV Show";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "basic_stat";
-            }
-        }
+        protected override string ExtendedStatsClass => "basic_stat";
 
-        protected bool HasExtendedStats
-        {
-            get
-            {
-                return ExtendedStats.Any() || Cast.Any();
-            }
-        }
+        protected bool HasExtendedStats => ExtendedStats.Any() || Cast.Any();
 
         protected int? Score { get; private set; }
 

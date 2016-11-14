@@ -4,29 +4,11 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class TrailerSearchResultBuilder : SearchResultBuilderBase<TrailerSearchResultBuilder>
     {
-        protected override TrailerSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override TrailerSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Trailer";
-            }
-        }
+        protected override string ResultType => "Trailer";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "more_stats extended_stats";
-            }
-        }
+        protected override string ExtendedStatsClass => "more_stats extended_stats";
 
         public TrailerSearchResultBuilder WithUserScore(decimal score)
         {

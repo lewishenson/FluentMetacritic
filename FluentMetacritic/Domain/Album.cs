@@ -12,13 +12,7 @@ namespace FluentMetacritic.Domain
             _releaseDate = releaseDate;
         }
 
-        public DateTime ReleaseDate
-        {
-            get
-            {
-                return _releaseDate;
-            }
-        }
+        public DateTime ReleaseDate => _releaseDate;
 
         public int? Score { get; set; }
     }

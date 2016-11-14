@@ -23,7 +23,7 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 
         protected string Description { get; private set; }
 
-        protected IDictionary<string, string> ExtendedStats { get; private set; }
+        protected IDictionary<string, string> ExtendedStats { get; }
 
         public TBuilder WithName(string name)
         {

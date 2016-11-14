@@ -17,13 +17,7 @@ namespace FluentMetacritic.Domain
             Genres = Enumerable.Empty<string>();
         }
 
-        public DateTime ReleaseDate
-        {
-            get
-            {
-                return _releaseDate;
-            }
-        }
+        public DateTime ReleaseDate => _releaseDate;
 
         public string Rated { get; set; }
 

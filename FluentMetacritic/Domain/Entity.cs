@@ -10,13 +10,13 @@ namespace FluentMetacritic.Domain
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentException("Name is required.", "name");
+                throw new ArgumentException("Name is required.", nameof(name));
             }
 
             Name = name.Trim();
         }
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
         public string Description { get; set; }
     }

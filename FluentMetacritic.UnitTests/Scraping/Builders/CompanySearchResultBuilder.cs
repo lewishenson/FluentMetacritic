@@ -4,29 +4,11 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class CompanySearchResultBuilder : SearchResultBuilderBase<CompanySearchResultBuilder>
     {
-        protected override CompanySearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override CompanySearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Company";
-            }
-        }
+        protected override string ResultType => "Company";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "basic_stat";
-            }
-        }
+        protected override string ExtendedStatsClass => "basic_stat";
 
         public CompanySearchResultBuilder WithAverageCareerScore(int averageCareerScore)
         {

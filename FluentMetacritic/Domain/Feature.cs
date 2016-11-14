@@ -15,20 +15,8 @@ namespace FluentMetacritic.Domain
             _postedOn = postedOn;
         }
 
-        public string PostedBy
-        {
-            get
-            {
-                return _postedBy;
-            }
-        }
+        public string PostedBy => _postedBy;
 
-        public DateTime PostedOn
-        {
-            get
-            {
-                return _postedOn;
-            }
-        }
+        public DateTime PostedOn => _postedOn;
     }
 }

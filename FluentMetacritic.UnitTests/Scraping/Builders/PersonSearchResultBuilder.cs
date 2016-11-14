@@ -6,37 +6,13 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class PersonSearchResultBuilder : SearchResultBuilderBase<PersonSearchResultBuilder>
     {
-        protected override PersonSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override PersonSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Person";
-            }
-        }
+        protected override string ResultType => "Person";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "basic_stat";
-            }
-        }
+        protected override string ExtendedStatsClass => "basic_stat";
 
-        protected bool HasExtendedStats
-        {
-            get
-            {
-                return ExtendedStats.Any() || AverageAlbumCareerScore.HasValue || AverageMovieCareerScore.HasValue || AverageTelevisionShowCareerScore.HasValue;
-            }
-        }
+        protected bool HasExtendedStats => ExtendedStats.Any() || AverageAlbumCareerScore.HasValue || AverageMovieCareerScore.HasValue || AverageTelevisionShowCareerScore.HasValue;
 
         protected int? AverageMovieCareerScore { get; set; }
 

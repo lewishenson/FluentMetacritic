@@ -4,29 +4,11 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class GameSearchResultBuilder : SearchResultBuilderBase<GameSearchResultBuilder>
     {
-        protected override GameSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override GameSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Game";
-            }
-        }
+        protected override string ResultType => "Game";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "more_stats extended_stats";
-            }
-        }
+        protected override string ExtendedStatsClass => "more_stats extended_stats";
 
         protected string Platform { get; private set; }
 

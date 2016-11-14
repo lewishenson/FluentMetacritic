@@ -19,13 +19,7 @@ namespace FluentMetacritic.Domain
 
         public int? Score { get; set; }
 
-        public DateTime StartDate
-        {
-            get
-            {
-                return _startDate;
-            }
-        }
+        public DateTime StartDate => _startDate;
 
         public IEnumerable<string> Starring { get; set; }
 

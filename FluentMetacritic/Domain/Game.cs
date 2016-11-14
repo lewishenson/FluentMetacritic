@@ -15,21 +15,9 @@ namespace FluentMetacritic.Domain
             _releaseDate = releaseDate;
         }
 
-        public string Platform
-        {
-            get
-            {
-                return _platform;
-            }
-        }
+        public string Platform => _platform;
 
-        public DateTime ReleaseDate
-        {
-            get
-            {
-                return _releaseDate;
-            }
-        }
+        public DateTime ReleaseDate => _releaseDate;
 
         public int? Score { get; set; }
 

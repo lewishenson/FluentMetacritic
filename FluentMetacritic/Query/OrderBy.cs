@@ -19,20 +19,8 @@ namespace FluentMetacritic.Query
             _queryStringValue = queryStringValue;
         }
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-        }
+        public string Name => _name;
 
-        public string QueryStringValue
-        {
-            get
-            {
-                return _queryStringValue;
-            }
-        }
+        public string QueryStringValue => _queryStringValue;
     }
 }

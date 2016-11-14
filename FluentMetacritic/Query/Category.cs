@@ -34,29 +34,11 @@ namespace FluentMetacritic.Query
             _entityType = entityType;
         }
 
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-        }
+        public string Name => _name;
 
-        public string UriValue
-        {
-            get
-            {
-                return _uriValue;
-            }
-        }
+        public string UriValue => _uriValue;
 
-        public Type EntityType
-        {
-            get
-            {
-                return _entityType;
-            }
-        }
+        public Type EntityType => _entityType;
 
         public static Category FromEntity<T>() where T : IEntity
         {

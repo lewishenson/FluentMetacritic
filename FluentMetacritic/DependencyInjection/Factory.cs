@@ -24,13 +24,7 @@ namespace FluentMetacritic.DependencyInjection
             Initialise();
         }
 
-        public static IFactory Instance
-        {
-            get
-            {
-                return TheInstance;
-            }
-        }
+        public static IFactory Instance => TheInstance;
 
         public T Create<T>()
         {

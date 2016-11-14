@@ -5,29 +5,11 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
 {
     public class MovieSearchResultBuilder : SearchResultBuilderBase<MovieSearchResultBuilder>
     {
-        protected override MovieSearchResultBuilder This
-        {
-            get
-            {
-                return this;
-            }
-        }
+        protected override MovieSearchResultBuilder This => this;
 
-        protected override string ResultType
-        {
-            get
-            {
-                return "Movie";
-            }
-        }
+        protected override string ResultType => "Movie";
 
-        protected override string ExtendedStatsClass
-        {
-            get
-            {
-                return "more_stats extended_stats";
-            }
-        }
+        protected override string ExtendedStatsClass => "more_stats extended_stats";
 
         protected int? CriticScore { get; private set; }
 
