@@ -6,31 +6,36 @@ FluentMetacritic works by scraping the Metacritic website after running a search
 
 The API uses the fluid builder pattern so the below examples can be combined.
 
+## Version 2.x
+
+FluentMetacritic now runs on both .NET Core and the full .NET Framework.
+
+Asynchronous support has also been added.
 
 ## Usage
 
 Getting the first page of search results containing all item types:
 
 ```csharp
-var searchResults = Metacritic.SearchFor().AllItems().UsingText("Dark Knight");
+var searchResults = await Metacritic.SearchFor().AllItems().UsingTextAsync("Dark Knight");
 ```
 
 Run a search for a specific item type:
 
 ```csharp
-var searchResults = Metacritic.SearchFor().Movies().UsingText("Back to the Future");
+var searchResults = await Metacritic.SearchFor().Movies().UsingTextAsync("Back to the Future");
 ```
 
 Run a search and order the results by score (the default order is relevancy):
 
 ```csharp
-var searchResults = Metacritic.SearchFor().AllItems().OrderedBy().Score().UsingText("Game of Thrones");
+var searchResults = await Metacritic.SearchFor().AllItems().OrderedBy().Score().UsingTextAsync("Game of Thrones");
 ```
 
 Run a search and get page two of the results:
 
 ```csharp
-var searchResults = Metacritic.SearchFor().AllItems().GoTo().Page(2).UsingText("Lord of the Rings");
+var searchResults = await Metacritic.SearchFor().AllItems().GoTo().Page(2).UsingTextAsync("Lord of the Rings");
 ```
 
 
