@@ -1,6 +1,9 @@
 ﻿FluentMetacritic changelog
 ==========================
 
+v2.0.0.0
+New version that adds .NET Core and async support.
+
 v1.0.0.1
 Fixed bug that prevented searches that returned zero results from being processed.
 
