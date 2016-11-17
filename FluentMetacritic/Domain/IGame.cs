@@ -6,7 +6,7 @@ namespace FluentMetacritic.Domain
     {
         string Platform { get; }
 
-        DateTime ReleaseDate { get; }
+        DateTime? ReleaseDate { get; }
 
         int? Score { get; }
 

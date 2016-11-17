@@ -9,10 +9,10 @@ namespace FluentMetacritic.Scraping
         {
             var name = ReadName(node);
             var platform = ReadValue<string>(node, "./div[@class='result_type']/span[@class='platform']");
-            var releaseDate = ReadReleaseDate(node);
 
-            var game = new Game(name, platform, releaseDate)
+            var game = new Game(name, platform)
                            {
+                               ReleaseDate = ReadNullableReleaseDate(node),
                                Description = ReadDescription(node),
                                Publisher = ReadExtendedStat<string>(node, "publisher"),
                                MaturityRating = ReadExtendedStat<string>(node, "maturity_rating"),
@@ -24,7 +24,7 @@ namespace FluentMetacritic.Scraping
 
         protected override string GenerateExtendedStatPath(string extendedStatClass)
         {
-            return string.Format("./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {0}']/span[@class!='label']", extendedStatClass);
+            return $"./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {extendedStatClass}']/span[@class!='label']";
         }
     }
 }

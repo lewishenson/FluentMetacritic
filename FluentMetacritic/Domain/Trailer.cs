@@ -6,18 +6,14 @@ namespace FluentMetacritic.Domain
 {
     public class Trailer : Entity, ITrailer
     {
-        private readonly DateTime _releaseDate;
-
-        public Trailer(string name, DateTime releaseDate)
+        public Trailer(string name)
             : base(name)
         {
-            _releaseDate = releaseDate;
-
             Starring = Enumerable.Empty<string>();
             Genres = Enumerable.Empty<string>();
         }
 
-        public DateTime ReleaseDate => _releaseDate;
+        public DateTime? ReleaseDate { get; set; }
 
         public string Rated { get; set; }
 

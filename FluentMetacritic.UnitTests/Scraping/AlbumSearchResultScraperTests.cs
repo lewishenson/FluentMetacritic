@@ -13,9 +13,10 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAnAlbumSearchResultWithAllFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Album("Furious Angels", new DateTime(2003, 6, 3))
+            var data = new Album("Furious Angels")
                            {
                                Description = "Best known for his 1995 single \"Clubbed To Death\"...",
+                               ReleaseDate = new DateTime(2003, 6, 3),
                                Score = 63
                            };
 
@@ -36,11 +37,10 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAnAlbumSearchResultWithMinimumFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Album("Furious Angels", new DateTime(2003, 6, 3));
+            var data = new Album("Furious Angels");
 
             var html = new AlbumSearchResultBuilder()
                 .WithName(data.Name)
-                .WithReleaseDate(data.ReleaseDate)
                 .Build();
 
             var scraper = new AlbumSearchResultScraper();

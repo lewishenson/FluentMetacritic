@@ -39,9 +39,12 @@ namespace FluentMetacritic.UnitTests.Scraping.Builders
             return This;
         }
 
-        public TBuilder WithReleaseDate(DateTime releaseDate)
+        public TBuilder WithReleaseDate(DateTime? releaseDate)
         {
-            ExtendedStats[ExtendedStatClasses.ReleaseDate] = releaseDate.ToString("MMM d, yyyy");
+            if (releaseDate.HasValue)
+            {
+                ExtendedStats[ExtendedStatClasses.ReleaseDate] = releaseDate.Value.ToString("MMM d, yyyy");
+            }
 
             return This;
         }

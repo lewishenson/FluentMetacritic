@@ -5,7 +5,7 @@ namespace FluentMetacritic.Domain
 {
     public interface IMovie : IEntity
     {
-        DateTime ReleaseDate { get; }
+        DateTime? ReleaseDate { get; }
 
         int? CriticScore { get; }
 

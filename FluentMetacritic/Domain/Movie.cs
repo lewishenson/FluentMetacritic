@@ -6,18 +6,14 @@ namespace FluentMetacritic.Domain
 {
     public class Movie : Entity, IMovie
     {
-        private readonly DateTime _releaseDate;
-
-        public Movie(string name, DateTime releaseDate)
+        public Movie(string name)
             : base(name)
         {
-            _releaseDate = releaseDate;
-
             Starring = Enumerable.Empty<string>();
             Genres = Enumerable.Empty<string>();
         }
 
-        public DateTime ReleaseDate => _releaseDate;
+        public DateTime? ReleaseDate { get; set; }
 
         public int? CriticScore { get; set; }
 

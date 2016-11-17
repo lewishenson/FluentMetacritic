@@ -35,6 +35,12 @@ namespace FluentMetacritic.Scraping
             return ReadValue(node, "./div[@class='result_wrap']/p[@class='deck basic_stat']/following-sibling::text()");
         }
 
+        protected virtual DateTime? ReadNullableReleaseDate(HtmlNode node)
+        {
+            var path = GenerateExtendedStatPath("release_date");
+            return ReadValue<DateTime?>(node, path);
+        }
+
         protected virtual DateTime ReadReleaseDate(HtmlNode node)
         {
             var path = GenerateExtendedStatPath("release_date");

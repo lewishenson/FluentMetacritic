@@ -9,19 +9,19 @@ namespace FluentMetacritic.Scraping
         public override ITrailer Scrape(HtmlNode node)
         {
             var name = ReadName(node);
-            var releaseDate = ReadReleaseDate(node);
 
-            var trailer = new Trailer(name, releaseDate)
-                            {
-                                Description = ReadDescription(node),
-                                Genres = ReadExtendedStats(node, "genre"),
-                                Rated = ReadExtendedStat<string>(node, "rating"),
-                                Runtime = ReadRunTime(node),
-                                Starring = ReadExtendedStats(node, "cast"),
-                                UserScore = ReadExtendedStat<decimal?>(node, "product_avguserscore"),
-                                Publisher = ReadExtendedStat<string>(node, "publisher"),
-                                MaturityRating = ReadExtendedStat<string>(node, "maturity_rating"),
-                            };
+            var trailer = new Trailer(name)
+                              {
+                                  ReleaseDate = ReadNullableReleaseDate(node),
+                                  Description = ReadDescription(node),
+                                  Genres = ReadExtendedStats(node, "genre"),
+                                  Rated = ReadExtendedStat<string>(node, "rating"),
+                                  Runtime = ReadRunTime(node),
+                                  Starring = ReadExtendedStats(node, "cast"),
+                                  UserScore = ReadExtendedStat<decimal?>(node, "product_avguserscore"),
+                                  Publisher = ReadExtendedStat<string>(node, "publisher"),
+                                  MaturityRating = ReadExtendedStat<string>(node, "maturity_rating"),
+                              };
 
             return trailer;
         }
@@ -39,7 +39,7 @@ namespace FluentMetacritic.Scraping
 
         protected override string GenerateExtendedStatPath(string extendedStatClass)
         {
-            return string.Format("./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {0}']/span[@class!='label']", extendedStatClass);
+            return $"./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {extendedStatClass}']/span[@class!='label']";
         }
     }
 }

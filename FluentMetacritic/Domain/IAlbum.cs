@@ -4,7 +4,7 @@ namespace FluentMetacritic.Domain
 {
     public interface IAlbum : IEntity
     {
-        DateTime ReleaseDate { get; }
+        DateTime? ReleaseDate { get; }
 
         int? Score { get; }
     }

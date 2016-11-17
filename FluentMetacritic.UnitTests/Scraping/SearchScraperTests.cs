@@ -65,8 +65,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsContentAndTheTypeIsAlbum_WhenItIsScraped_TheAlbumIsReturned()
         {
-            var expectedAlbum = new Album("The Glass Bead Game", new DateTime(2009, 5, 26))
+            var expectedAlbum = new Album("The Glass Bead Game")
                                     {
+                                        ReleaseDate = new DateTime(2009, 5, 26),
                                         Description = "The latest album for the British artist features singer Lavinia Blackwell, John Contreras on cello and Joolie Wood on violin.",
                                         Score = 82
                                     };
@@ -120,8 +121,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsContentAndTheTypeIsGame_WhenItIsScraped_TheGameIsReturned()
         {
-            var expectedGame = new Game("Game of Thrones", "PC", new DateTime(2012, 5, 15))
+            var expectedGame = new Game("Game of Thrones", "PC")
                                    {
+                                       ReleaseDate = new DateTime(2012, 5, 15),
                                        Description = "Based on George R.R. Martin's best-selling 'A Song of Ice and Fire' series, Cyanide has developed games for the PC and next-gen consoles.",
                                        MaturityRating = "M",
                                        Publisher = "Atlus Co.",
@@ -142,8 +144,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsContentAndTheTypeIsMovie_WhenItIsScraped_TheMovieIsReturned()
         {
-            var expectedMovie = new Movie("Ender's Game", new DateTime(2013, 11, 1))
+            var expectedMovie = new Movie("Ender's Game")
                                     {
+                                        ReleaseDate = new DateTime(2013, 11, 1),
                                         CriticScore = 51,
                                         Description = "The Earth was ravaged twice by the Buggers, an alien race seemingly determined to destroy humanity. Seventy years later, the people of Earth remain banded together to prevent our own annihilation...",
                                         Genres = new[] { "Action", "Adventure", "Sci-Fi" },
@@ -211,8 +214,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsContentAndTheTypeIsTrailer_WhenItIsScraped_TheTrailerIsReturned()
         {
-            var expectedTrailer = new Trailer("The Wall - Game of Thrones Trailer", new DateTime(2012, 5, 15))
+            var expectedTrailer = new Trailer("The Wall - Game of Thrones Trailer")
                                       {
+                                          ReleaseDate = new DateTime(2012, 5, 15),
                                           Description = "Based on George R.R. Martin's best-selling 'A Song of Ice and Fire' series, Cyanide has developed games for the PC and next-gen consoles.",
                                           MaturityRating = "M",
                                           Publisher = "Atlus Co."

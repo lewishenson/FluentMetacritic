@@ -6,12 +6,10 @@ namespace FluentMetacritic.Domain
 {
     public class TelevisionShow : Entity, ITelevisionShow
     {
-        private readonly DateTime _startDate;
-
         public TelevisionShow(string name, DateTime startDate)
             : base(name)
         {
-            _startDate = startDate;
+            StartDate = startDate;
 
             Starring = Enumerable.Empty<string>();
             Genres = Enumerable.Empty<string>();
@@ -19,7 +17,7 @@ namespace FluentMetacritic.Domain
 
         public int? Score { get; set; }
 
-        public DateTime StartDate => _startDate;
+        public DateTime StartDate { get; }
 
         public IEnumerable<string> Starring { get; set; }
 

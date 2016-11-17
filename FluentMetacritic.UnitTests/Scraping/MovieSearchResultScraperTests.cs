@@ -13,8 +13,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAMovieSearchResultWithAllFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Movie("The Amazing Spider-Man", new DateTime(2012, 7, 3))
+            var data = new Movie("The Amazing Spider-Man")
                            {
+                               ReleaseDate = new DateTime(2012, 7, 3),
                                CriticScore = 66,
                                Description = "The Amazing Spider-Man is the story of Peter Parker...",
                                Genres = new[] { "Action", "Adventure", "Thriller", "Fantasy" },
@@ -46,11 +47,10 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAMovieSearchResultWithMinimumFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Movie("The Amazing Spider-Man 4", new DateTime(2018, 5, 4));
+            var data = new Movie("The Amazing Spider-Man 4");
 
             var html = new MovieSearchResultBuilder()
                 .WithName(data.Name)
-                .WithReleaseDate(data.ReleaseDate)
                 .Build();
 
             var scraper = new MovieSearchResultScraper();

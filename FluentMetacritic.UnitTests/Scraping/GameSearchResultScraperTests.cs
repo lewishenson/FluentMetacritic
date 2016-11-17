@@ -13,8 +13,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAGameSearchResultWithAllFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Game("LEGO Marvel Super Heroes", "PC", new DateTime(2013, 11, 15))
+            var data = new Game("LEGO Marvel Super Heroes", "PC")
                            {
+                               ReleaseDate = new DateTime(2013, 11, 15),
                                Description = "LEGO Marvel Super Heroes features an original story where players take control of Iron Man...",
                                Publisher = "Warner Bros. Interactive Entertainment",
                                MaturityRating = "E10+",
@@ -41,12 +42,11 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsAGameSearchResultWithMinimumFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Game("A Game of Thrones", "PC", new DateTime(2012, 12, 31));
+            var data = new Game("A Game of Thrones", "PC");
 
             var html = new GameSearchResultBuilder()
                 .WithName(data.Name)
                 .WithPlatform(data.Platform)
-                .WithReleaseDate(data.ReleaseDate)
                 .Build();
 
             var scraper = new GameSearchResultScraper();

@@ -8,10 +8,10 @@ namespace FluentMetacritic.Scraping
         public override IMovie Scrape(HtmlNode node)
         {
             var name = ReadName(node);
-            var releaseDate = ReadReleaseDate(node);
 
-            var movie = new Movie(name, releaseDate)
+            var movie = new Movie(name)
                             {
+                                ReleaseDate = ReadNullableReleaseDate(node),
                                 CriticScore = ReadValue<int?>(node, "./div[@class='result_wrap']/div/div[@class='main_stats']/span"),
                                 Description = ReadDescription(node),
                                 Genres = ReadExtendedStats(node, "genre"),
@@ -37,7 +37,7 @@ namespace FluentMetacritic.Scraping
 
         protected override string GenerateExtendedStatPath(string extendedStatClass)
         {
-            return string.Format("./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {0}']/span[@class!='label']", extendedStatClass);
+            return $"./div[@class='result_wrap']/div/div[@class='more_stats extended_stats']/ul/li[@class='stat {extendedStatClass}']/span[@class!='label']";
         }
     }
 }

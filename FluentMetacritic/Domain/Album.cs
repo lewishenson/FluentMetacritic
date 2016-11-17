@@ -4,15 +4,12 @@ namespace FluentMetacritic.Domain
 {
     public class Album : Entity, IAlbum
     {
-        private readonly DateTime _releaseDate;
-
-        public Album(string name, DateTime releaseDate)
+        public Album(string name)
             : base(name)
         {
-            _releaseDate = releaseDate;
         }
 
-        public DateTime ReleaseDate => _releaseDate;
+        public DateTime? ReleaseDate { get; set; }
 
         public int? Score { get; set; }
     }

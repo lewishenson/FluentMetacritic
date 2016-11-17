@@ -4,20 +4,15 @@ namespace FluentMetacritic.Domain
 {
     public class Game : Entity, IGame
     {
-        private readonly string _platform;
-
-        private readonly DateTime _releaseDate;
-
-        public Game(string name, string platform, DateTime releaseDate)
+        public Game(string name, string platform)
             : base(name)
         {
-            _platform = platform;
-            _releaseDate = releaseDate;
+            Platform = platform;
         }
 
-        public string Platform => _platform;
+        public string Platform { get; }
 
-        public DateTime ReleaseDate => _releaseDate;
+        public DateTime? ReleaseDate { get; set; }
 
         public int? Score { get; set; }
 

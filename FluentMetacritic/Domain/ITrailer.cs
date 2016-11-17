@@ -5,7 +5,7 @@ namespace FluentMetacritic.Domain
 {
     public interface ITrailer : IEntity
     {
-        DateTime ReleaseDate { get; }
+        DateTime? ReleaseDate { get; }
 
         decimal? UserScore { get; }
 

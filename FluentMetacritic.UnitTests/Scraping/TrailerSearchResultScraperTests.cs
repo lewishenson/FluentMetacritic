@@ -13,8 +13,9 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsATrailerSearchResultWithAllFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Trailer("MARVEL'S THE AVENGERS", new DateTime(2012, 5, 4))
+            var data = new Trailer("MARVEL'S THE AVENGERS")
                            {
+                               ReleaseDate = new DateTime(2012, 5, 4),
                                Description = "Continuing the epic big-screen adventures started in Iron Man...",
                                Genres = new[] { "Action", "Adventure", "Sci-Fi", "Thriller" },
                                Rated = "PG-13",
@@ -48,11 +49,10 @@ namespace FluentMetacritic.UnitTests.Scraping
         [Fact]
         public void GivenThereIsATrailerSearchResultWithMinimumFieldsSet_WhenItIsScraped_AnEntityIsCreated()
         {
-            var data = new Trailer("MARVEL'S THE AVENGERS", new DateTime(2012, 5, 4));
+            var data = new Trailer("MARVEL'S THE AVENGERS");
 
             var html = new TrailerSearchResultBuilder()
                 .WithName(data.Name)
-                .WithReleaseDate(data.ReleaseDate)
                 .Build();
 
             var scraper = new TrailerSearchResultScraper();
