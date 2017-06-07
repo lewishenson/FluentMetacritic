@@ -1,7 +1,8 @@
 ﻿using FluentAssertions;
 
 using FluentMetacritic.Scraping;
-
+using System;
+using System.Collections.Generic;
 using Xunit;
 using Xunit.Extensions;
 
@@ -56,6 +57,21 @@ namespace FluentMetacritic.UnitTests.Scraping
             var output = Converter.SafeConvert(input, defaultValue);
 
             output.Should().Be(expectedOutput);
+        }
+
+        [Theory]
+        [MemberData(nameof(GetDateTimeTestingData))]
+        public void GivenAStringInput_WhenConvertedToNullableDateTimeAndDefaultValueIsSupplied_ItIsCorrect(string input, DateTime? defaultValue, DateTime? expectedOutput)
+        {
+            var output = Converter.SafeConvert(input, defaultValue);
+
+            output.Should().Be(expectedOutput);
+        }
+
+        public static IEnumerable<object[]> GetDateTimeTestingData()
+        {
+            yield return new object[] { "March 27, 2015", null, new DateTime(2015, 3, 27) };
+            yield return new object[] { "TBA", null, null };
         }
     }
 }
