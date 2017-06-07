@@ -21,7 +21,14 @@ namespace FluentMetacritic.Scraping
             var targetTypeInfo = targetType.GetTypeInfo();
             if (targetTypeInfo.IsGenericType && targetType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
-                return (T)Convert.ChangeType(value, targetTypeInfo.GetGenericArguments()[0]);
+                try
+                {
+                    return (T)Convert.ChangeType(value, targetTypeInfo.GetGenericArguments()[0]);
+                }
+                catch (FormatException)
+                {
+                    return defaultValue;
+                }
             }
 
             return (T)Convert.ChangeType(value, typeof(T));
