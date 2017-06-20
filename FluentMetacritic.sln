@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{319BEEDC-A9B1-46B3-9639-2CF138B503B9}"
 EndProject
@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Client", "Test Client", "{D911AA50-1A00-4CBF-BE45-D4A274EE6B54}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMetacritic", "FluentMetacritic\FluentMetacritic.xproj", "{C596C81F-3B0C-49F7-B4F8-725DC8344E57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMetacritic", "FluentMetacritic\FluentMetacritic.csproj", "{C596C81F-3B0C-49F7-B4F8-725DC8344E57}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMetacritic.TestClient", "FluentMetacritic.TestClient\FluentMetacritic.TestClient.xproj", "{7923B854-E408-4675-9F19-7C0BE5FEF9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMetacritic.TestClient", "FluentMetacritic.TestClient\FluentMetacritic.TestClient.csproj", "{7923B854-E408-4675-9F19-7C0BE5FEF9B7}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "FluentMetacritic.UnitTests", "FluentMetacritic.UnitTests\FluentMetacritic.UnitTests.xproj", "{12BA4114-3825-4880-A00C-17218A1B44CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMetacritic.UnitTests", "FluentMetacritic.UnitTests\FluentMetacritic.UnitTests.csproj", "{12BA4114-3825-4880-A00C-17218A1B44CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
