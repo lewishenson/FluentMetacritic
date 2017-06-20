@@ -1,6 +1,9 @@
 ﻿FluentMetacritic changelog
 ==========================
 
+v2.0.1.0
+Bug fix from SlyCaptainFlint to handle "TBA" release dates.
+
 v2.0.0.0
 New version that adds .NET Core and async support.
 
