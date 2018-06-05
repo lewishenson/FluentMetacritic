@@ -1,5 +1,7 @@
 # FluentMetacritic [![NuGet package](https://buildstats.info/nuget/FluentMetacritic)](https://www.nuget.org/packages/FluentMetacritic)
 
+**FluentMetacritic has been sunsetted and is no longer under active development. All functionality no longer works.**
+
 C# API for scraping Metacritic review scores.
 
 FluentMetacritic works by scraping the Metacritic website after running a search. The API has the same functionality as the website - search by text and type, choose what you want to order the results by and go to different pages.
